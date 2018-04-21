@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('welcome', ['hostname' => $_SERVER['HOSTNAME']]);
+    return view('welcome', ['hostname' => (!empty($_SERVER['HOSTNAME'])) ? $_SERVER['HOSTNAME'] : print_r($_SERVER)]);
 });
